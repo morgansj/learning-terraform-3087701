@@ -20,7 +20,7 @@ data "aws_ami" "app_ami" {
 
 resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
-  subnet_id     = "subnet-080501e54791222b4"
+  subnet_id     = "	subnet-085d41e0512e133f5"
   instance_type = var.instance_type
 
   vpc_security_group_ids = [aws_security_group.blog.id]
@@ -34,7 +34,7 @@ resource "aws_security_group" "blog" {
   name        = "blog"
   description = "Allow http and https in. Allow everything out"
 
-  vpc_id = "vpc-0b31d673a4d3af885"
+  vpc_id = "vpc-0d4677025063571e0"
 }
 
 resource "aws_security_group_rule" "blog_http_in" {
